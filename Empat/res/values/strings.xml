@@ -4,5 +4,10 @@
     <string name="app_name">Empat</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-
+    <string name="insert_nick">Inserisci un nome</string>
+    <string name="welcome_message">Benvenuto in Empat! \nSeleziona il tuo paese, \ninserisci il tuo numero di telefono \ne clicca su Continua:</string>
+    <string name="telephone_hint">Numero di telefono</string>
+    <string name="continue_button">Continua</string>
+    
+    
 </resources>
