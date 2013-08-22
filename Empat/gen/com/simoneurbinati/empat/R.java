@@ -47,6 +47,7 @@ public final class R {
         public static final int toast_empty_phone_string=0x7f050008;
         public static final int toast_invalid_phone=0x7f050009;
         public static final int toast_invalid_server_address=0x7f050007;
+        public static final int toast_registration_error=0x7f05000a;
         public static final int welcome_message=0x7f050004;
     }
     public static final class style {

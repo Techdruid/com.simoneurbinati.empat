@@ -6,10 +6,14 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import com.simoneurbinati.empat.MainActivity;
 import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.utils.Config;
 import com.simoneurbinati.empat.utils.Utility;
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +23,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class Login extends Activity{
@@ -79,12 +82,13 @@ public class Login extends Activity{
 	private void registerRoutine() {
 		String serverAddress = Config.SERVER_DEFAULT_BASE_URL;
 		EditText phoneNumberView = (EditText) findViewById(R.id.editText1);
-		String phoneNumber = phoneNumberView.getText().toString(); 
+		final String phoneNumber = phoneNumberView.getText().toString(); 
+		final URL serverUrl;
 		if (serverAddress.charAt(serverAddress.length() - 1) != '/') {
 			serverAddress += "/";
 		}
 		try {
-			URL serverUrl = new URL(serverAddress);
+			serverUrl = new URL(serverAddress);
 		} catch (MalformedURLException e) {
 			Toast.makeText(this, getString(R.string.toast_invalid_server_address), Toast.LENGTH_SHORT).show();
 			return;
@@ -99,23 +103,49 @@ public class Login extends Activity{
 		}
 		
 		AsyncTask<Void, Void, Boolean> task = new AsyncTask<Void, Void, Boolean>(){
-
+			ProgressDialog loading;
+			
 			@Override
 			protected void onPreExecute() {
+				loading = new ProgressDialog(Login.this);
 				
+				loading.setIndeterminate(true);
+				loading.setCancelable(true);
+				loading.setOnCancelListener(new DialogInterface.OnCancelListener() {
+					@Override
+					public void onCancel(DialogInterface dialog) {
+						cancel(true);
+					}
+				});
+				loading.show();
 			}
 			
 			@Override
 			protected Boolean doInBackground(Void... params) {
-				// TODO Auto-generated method stub
-				return null;
+				return loginProcedure(serverUrl, phoneNumber);
 			}
 			
 			@Override
 			protected void onPostExecute(Boolean result) {
-				
+			    try {
+			    	loading.dismiss();
+			    	loading = null;
+			    } catch (Exception e) {
+			    }
+				if (result == true) {
+					finish();
+					startActivity(new Intent(Login.this, MainActivity.class));
+				} else {
+					Toast.makeText(Login.this, R.string.toast_registration_error, Toast.LENGTH_SHORT).show();
+				}
 			}
 		};
+		task.execute();
+		
+	}
+	
+	private Boolean loginProcedure(URL serverURL, String phoneNumber){
+		return true;
 		
 	}
 	
