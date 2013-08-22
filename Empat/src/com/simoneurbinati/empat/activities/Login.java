@@ -1,21 +1,25 @@
 package com.simoneurbinati.empat.activities;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.regex.Pattern;
-
+import com.google.android.gcm.GCMRegistrar;
 import com.simoneurbinati.empat.MainActivity;
 import com.simoneurbinati.empat.R;
+import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.utils.Config;
 import com.simoneurbinati.empat.utils.Utility;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -145,6 +149,30 @@ public class Login extends Activity{
 	}
 	
 	private Boolean loginProcedure(URL serverURL, String phoneNumber){
+		SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
+		String google_id = pref.getString("google_id", null);
+		//la registrazione non è stata ancora effettuata
+		if (google_id == null){
+			GCMRegistrar.checkDevice(this);
+			GCMRegistrar.checkManifest(this);
+			GCMRegistrar.register(this, Config.GCM_SENDER_ID);
+		}
+		
+
+		String privateKey;
+//		try {
+			privateKey = Server.register(serverURL, phoneNumber, google_id);
+//		} catch (IOException e) {
+//			Log.e("Login", "Errore nella registrazione", e);
+//			return false;
+//		}
+		// Salva sulle preferenze condivise.
+		SharedPreferences.Editor editor = pref.edit();
+		editor.putBoolean("login", true);
+		editor.putString("serverAddress", serverURL.toExternalForm());
+		editor.putString("phoneNumber", phoneNumber);
+		editor.putString("google_id", google_id);
+		editor.commit();
 		return true;
 		
 	}
