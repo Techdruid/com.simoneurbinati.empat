@@ -8,6 +8,10 @@
     <string name="welcome_message">Benvenuto in Empat! \nSeleziona il tuo paese, \ninserisci il tuo numero di telefono \ne clicca su Continua:</string>
     <string name="telephone_hint">Numero di telefono</string>
     <string name="continue_button">Continua</string>
+    <string name="toast_invalid_server_address">indirizzo del server nel formato sbagliato</string>
+    <string name="toast_empty_phone_string">inserisci il numero di telefono</string>
+    <string name="toast_invalid_phone">il numero che hai inserito non è valido</string>
+    
     
     
 </resources>

@@ -25,9 +25,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080004;
-        public static final int button1=0x7f080003;
-        public static final int editText1=0x7f080002;
-        public static final int editText2=0x7f080001;
+        public static final int button1=0x7f080002;
+        public static final int editText1=0x7f080001;
+        public static final int spinner1=0x7f080003;
         public static final int textView2=0x7f080000;
     }
     public static final class layout {
@@ -44,6 +44,9 @@ public final class R {
         public static final int hello_world=0x7f050002;
         public static final int insert_nick=0x7f050003;
         public static final int telephone_hint=0x7f050005;
+        public static final int toast_empty_phone_string=0x7f050008;
+        public static final int toast_invalid_phone=0x7f050009;
+        public static final int toast_invalid_server_address=0x7f050007;
         public static final int welcome_message=0x7f050004;
     }
     public static final class style {
@@ -73,5 +76,8 @@ public final class R {
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f060001;
+        /**  Theme no tile 
+         */
+        public static final int AppThemeNoTitle=0x7f060002;
     }
 }
