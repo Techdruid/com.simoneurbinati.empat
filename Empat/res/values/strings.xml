@@ -12,6 +12,8 @@
     <string name="toast_empty_phone_string">inserisci il numero di telefono</string>
     <string name="toast_invalid_phone">il numero che hai inserito non è valido</string>
     <string name="toast_registration_error">la registrazione non è andata a buon fine riprova di nuovo</string>
+    <string name="notification_title">Titolo notifica</string>
+    <string name="notification_text">Testo notifica</string>
     
     
     

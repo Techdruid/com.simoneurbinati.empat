@@ -1,6 +1,5 @@
 package com.simoneurbinati.empat.activities;
 
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,7 +18,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -158,7 +156,16 @@ public class Login extends Activity{
 			GCMRegistrar.register(this, Config.GCM_SENDER_ID);
 		}
 		
-
+		// Controlla la registrazione a GCM.
+		while (google_id == null) {
+			try {
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				return false;
+			}
+			google_id = pref.getString("gcm_id", null);
+		}
+		@SuppressWarnings("unused")
 		String privateKey;
 //		try {
 			privateKey = Server.register(serverURL, phoneNumber, google_id);
