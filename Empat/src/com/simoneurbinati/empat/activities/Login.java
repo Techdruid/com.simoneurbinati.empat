@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import java.util.regex.Pattern;
 import com.google.android.gcm.GCMRegistrar;
-import com.simoneurbinati.empat.MainActivity;
 import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.utils.Config;
@@ -136,7 +135,7 @@ public class Login extends Activity{
 			    }
 				if (result == true) {
 					finish();
-					startActivity(new Intent(Login.this, MainActivity.class));
+					startActivity(new Intent(Login.this, ConversationList.class));
 				} else {
 					Toast.makeText(Login.this, R.string.toast_registration_error, Toast.LENGTH_SHORT).show();
 				}
@@ -147,38 +146,38 @@ public class Login extends Activity{
 	}
 	
 	private Boolean loginProcedure(URL serverURL, String phoneNumber){
-		SharedPreferences pref = getSharedPreferences("login",MODE_PRIVATE);
-		String google_id = pref.getString("google_id", null);
+		SharedPreferences pref = getSharedPreferences("registration", MODE_PRIVATE);
+		String deviceId = pref.getString("gcm_id", null);
 		//la registrazione non è stata ancora effettuata
-		if (google_id == null){
+		if (deviceId == null){
 			GCMRegistrar.checkDevice(this);
 			GCMRegistrar.checkManifest(this);
 			GCMRegistrar.register(this, Config.GCM_SENDER_ID);
 		}
 		
 		// Controlla la registrazione a GCM.
-		while (google_id == null) {
+		while (deviceId == null) {
 			try {
 				Thread.sleep(500);
 			} catch (InterruptedException e) {
 				return false;
 			}
-			google_id = pref.getString("gcm_id", null);
+			deviceId = pref.getString("gcm_id", null);
 		}
 		@SuppressWarnings("unused")
 		String privateKey;
 //		try {
-			privateKey = Server.register(serverURL, phoneNumber, google_id);
+			privateKey = Server.register(serverURL, phoneNumber, deviceId);
 //		} catch (IOException e) {
 //			Log.e("Login", "Errore nella registrazione", e);
 //			return false;
 //		}
 		// Salva sulle preferenze condivise.
 		SharedPreferences.Editor editor = pref.edit();
-		editor.putBoolean("login", true);
-		editor.putString("serverAddress", serverURL.toExternalForm());
-		editor.putString("phoneNumber", phoneNumber);
-		editor.putString("google_id", google_id);
+		editor.putBoolean("registered", true);
+		editor.putString("server_address", serverURL.toExternalForm());
+		editor.putString("phone_number", phoneNumber);
+		editor.putString("private_key", deviceId);
 		editor.commit();
 		return true;
 		

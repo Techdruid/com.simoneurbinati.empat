@@ -54,7 +54,7 @@ public class Server {
 			try {
 				ret[i].sentTimestamp = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss Z", Locale.US).parse(response.result.messages[i].ts_sent).getTime();
 			} catch (Exception e) {
-				Log.w("freem", "formato timestamp non valido in " + response.result.messages[i].ts_sent, e);
+				Log.w("Server", "formato timestamp non valido in " + response.result.messages[i].ts_sent, e);
 				ret[i].sentTimestamp = System.currentTimeMillis();
 			}
 		}

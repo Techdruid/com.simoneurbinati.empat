@@ -53,7 +53,7 @@ public class RetrieveMessagesService extends Service {
 		try {
 			messages = Server.retrieve(new URL(serverBaseUrl), privateKey, phoneNumber);
 		} catch (Exception e) {
-			Log.e("freem", "errore durante il download dei messaggi", e);
+			Log.e("RettrieveMessagesService", "errore durante il download dei messaggi", e);
 			// Rischedula se ci sono meno di 5 tentativi falliti.
 			failedAttempts++;
 			if (failedAttempts < 5) {
@@ -133,7 +133,7 @@ public class RetrieveMessagesService extends Service {
 		protected void onPreExecute() {
 			// Acquisisce un Wake Lock.
 			PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
-			mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "freem-retrieve-message");
+			mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "empat-retrieve-message");
 			mWakeLock.acquire();
 		}
 
