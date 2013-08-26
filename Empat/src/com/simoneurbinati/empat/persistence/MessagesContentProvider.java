@@ -1,4 +1,4 @@
-package com.simoneurbinati.empat;
+package com.simoneurbinati.empat.persistence;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

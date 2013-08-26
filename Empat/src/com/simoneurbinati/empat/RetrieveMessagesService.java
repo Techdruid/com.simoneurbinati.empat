@@ -4,6 +4,7 @@ import java.net.URL;
 
 import com.simoneurbinati.empat.model.Message;
 import com.simoneurbinati.empat.net.Server;
+import com.simoneurbinati.empat.persistence.MessagesContentProvider;
 
 import android.app.AlarmManager;
 import android.app.Notification;

@@ -1,5 +1,6 @@
 package com.simoneurbinati.empat.activities;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -166,12 +168,12 @@ public class Login extends Activity{
 		}
 		@SuppressWarnings("unused")
 		String privateKey;
-//		try {
+		try {
 			privateKey = Server.register(serverURL, phoneNumber, deviceId);
-//		} catch (IOException e) {
-//			Log.e("Login", "Errore nella registrazione", e);
-//			return false;
-//		}
+		} catch (IOException e) {
+			Log.e("Login", "Errore nella registrazione", e);
+			return false;
+		}
 		// Salva sulle preferenze condivise.
 		SharedPreferences.Editor editor = pref.edit();
 		editor.putBoolean("registered", true);

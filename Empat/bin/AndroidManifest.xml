@@ -54,7 +54,7 @@
         <service android:name=".RetrieveMessagesService" />
         
         <provider
-          android:name=".MessagesContentProvider"
+          android:name="com.simoneurbinati.empat.persistence.MessagesContentProvider"
           android:authorities="com.simoneurbinati.empat.messages"
           android:exported="false" />
     </application>
