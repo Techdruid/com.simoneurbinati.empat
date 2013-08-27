@@ -36,6 +36,8 @@ public class Login extends Activity{
 		
 		  //setto il menu a tendina
 		  	Spinner spinner = (Spinner)findViewById(R.id.spinner1);
+		  	spinner.setEnabled(false);
+		  	spinner.setClickable(false);
 		  	
 		  	ArrayList<String> ar = new ArrayList<String>();
 		  	Set<String> temp =  Utility.getCountryMap().keySet();
@@ -114,6 +116,8 @@ public class Login extends Activity{
 				
 				loading.setIndeterminate(true);
 				loading.setCancelable(true);
+				loading.setTitle(getString(R.string.registration_dialog_title));
+				loading.setMessage(getString(R.string.registration_dialog_message));
 				loading.setOnCancelListener(new DialogInterface.OnCancelListener() {
 					@Override
 					public void onCancel(DialogInterface dialog) {

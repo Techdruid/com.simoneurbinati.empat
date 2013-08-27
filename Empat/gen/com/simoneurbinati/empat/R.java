@@ -66,6 +66,7 @@ public final class R {
         public static final int compose_title=0x7f050010;
         public static final int contacts=0x7f050011;
         public static final int continue_button=0x7f050006;
+        public static final int defaultprefix=0x7f05001d;
         public static final int hello_world=0x7f050002;
         public static final int hint_message=0x7f05000d;
         public static final int hint_phone_number=0x7f05000c;
@@ -75,6 +76,8 @@ public final class R {
         public static final int notification_text=0x7f05001a;
         public static final int notification_title=0x7f050019;
         public static final int read=0x7f05000e;
+        public static final int registration_dialog_message=0x7f05001c;
+        public static final int registration_dialog_title=0x7f05001b;
         public static final int send=0x7f050012;
         public static final int send_dialog_message=0x7f050016;
         public static final int send_dialog_title=0x7f050015;

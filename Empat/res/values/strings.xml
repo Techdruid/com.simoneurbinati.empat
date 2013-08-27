@@ -28,7 +28,10 @@
     <string name="send_toast_error">Invio fallito. Riprovare.</string>
     <string name="notification_title">Empat</string>
     <string name="notification_text">Hai nuovi messaggi</string>
- 	
+ 	<string name="registration_dialog_title">Registrazione in corso</string>
+    <string name="registration_dialog_message">Attendere, registrazione in corso&#8230;</string>
+    <string name="defaultprefix">+39</string>
+    
     
     
 </resources>
