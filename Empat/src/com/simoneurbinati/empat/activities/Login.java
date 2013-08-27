@@ -137,7 +137,7 @@ public class Login extends Activity{
 			    }
 				if (result == true) {
 					finish();
-					startActivity(new Intent(Login.this, ConversationList.class));
+					startActivity(new Intent(Login.this, ConversationsList.class));
 				} else {
 					Toast.makeText(Login.this, R.string.toast_registration_error, Toast.LENGTH_SHORT).show();
 				}
@@ -150,7 +150,6 @@ public class Login extends Activity{
 	private Boolean loginProcedure(URL serverURL, String phoneNumber){
 		SharedPreferences pref = getSharedPreferences("registration", MODE_PRIVATE);
 		String deviceId = pref.getString("gcm_id", null);
-		//la registrazione non è stata ancora effettuata
 		if (deviceId == null){
 			GCMRegistrar.checkDevice(this);
 			GCMRegistrar.checkManifest(this);
@@ -166,7 +165,6 @@ public class Login extends Activity{
 			}
 			deviceId = pref.getString("gcm_id", null);
 		}
-		@SuppressWarnings("unused")
 		String privateKey;
 		try {
 			privateKey = Server.register(serverURL, phoneNumber, deviceId);
@@ -179,12 +177,10 @@ public class Login extends Activity{
 		editor.putBoolean("registered", true);
 		editor.putString("server_address", serverURL.toExternalForm());
 		editor.putString("phone_number", phoneNumber);
-		editor.putString("private_key", deviceId);
+		editor.putString("private_key", privateKey);
 		editor.commit();
 		return true;
 		
 	}
 	
-
-
 }

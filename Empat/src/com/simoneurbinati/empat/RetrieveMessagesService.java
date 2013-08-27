@@ -45,9 +45,9 @@ public class RetrieveMessagesService extends Service {
 
 	private void retrieveMessage(int failedAttempts) {
 		// Risolve i dati dati necessari per la richiesta al server.
-		SharedPreferences prefs = getSharedPreferences("login", MODE_PRIVATE);
-		String serverBaseUrl = prefs.getString("serverAddress", null);
-		String privateKey = prefs.getString("google_id", null);
+		SharedPreferences prefs = getSharedPreferences("registration", MODE_PRIVATE);
+		String serverBaseUrl = prefs.getString("server_address", null);
+		String privateKey = prefs.getString("private_key", null);
 		String phoneNumber = prefs.getString("phone_number", null);
 		// Esegue la chiamata sul server.
 		Message[] messages;

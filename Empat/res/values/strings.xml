@@ -12,9 +12,23 @@
     <string name="toast_empty_phone_string">inserisci il numero di telefono</string>
     <string name="toast_invalid_phone">il numero che hai inserito non è valido</string>
     <string name="toast_registration_error">la registrazione non è andata a buon fine riprova di nuovo</string>
-    <string name="notification_title">Titolo notifica</string>
-    <string name="notification_text">Testo notifica</string>
-    
+    <string name="send_toast_unknown_recipient">Impossibile inviare: il destinatario non usa Empat</string>
+    <string name="hint_phone_number">Numero del destinatario</string>
+    <string name="hint_message">Testo del messaggio</string>
+    <string name="read">Letto</string>
+    <string name="compose">Componi</string>
+    <string name="compose_title">Nuovo messaggio</string>
+    <string name="contacts">Rubrica</string>
+    <string name="send">Invia</string>
+    <string name="missing_phone_number">Numero non specificato</string>
+    <string name="missing_message">Messaggio non specificato</string>
+    <string name="send_dialog_title">Invio in corso</string>
+    <string name="send_dialog_message">Attendere, invio in corso&#8230;</string>
+    <string name="send_toast_success">Messaggio inviato</string>
+    <string name="send_toast_error">Invio fallito. Riprovare.</string>
+    <string name="notification_title">Empat</string>
+    <string name="notification_text">Hai nuovi messaggi</string>
+ 	
     
     
 </resources>
