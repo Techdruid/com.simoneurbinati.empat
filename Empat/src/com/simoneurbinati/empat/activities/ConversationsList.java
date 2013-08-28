@@ -8,11 +8,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
+import android.support.v7.app.ActionBarActivity;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -25,7 +25,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
-public class ConversationsList extends FragmentActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class ConversationsList extends ActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 	
 	private ListView mListView;
 	private CursorAdapter mCursorAdapter;
@@ -60,8 +60,17 @@ public class ConversationsList extends FragmentActivity implements LoaderManager
 		return true;
 	}
 
+//	@Override
+//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+//		if (item.getItemId() == R.id.compose) {
+//			startActivity(new Intent(this, Compose.class));
+//			return true;
+//		}
+//		return false;
+//	}
+	
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 		if (item.getItemId() == R.id.compose) {
 			startActivity(new Intent(this, Compose.class));
 			return true;

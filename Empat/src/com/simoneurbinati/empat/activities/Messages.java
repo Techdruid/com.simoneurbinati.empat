@@ -12,11 +12,11 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
+import android.support.v7.app.ActionBarActivity;
 import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -27,7 +27,7 @@ import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class Messages extends FragmentActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+public class Messages extends ActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
 	private long mThreadId;
 
@@ -92,8 +92,24 @@ public class Messages extends FragmentActivity implements LoaderManager.LoaderCa
 		return true;
 	}
 
+//	@Override
+//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+//		int id = item.getItemId();
+//		if (id == android.R.id.home) {
+//			finish();
+//			return true;
+//		}
+//		if (id == R.id.compose) {
+//			Intent intent = new Intent(this, Compose.class);
+//			intent.putExtra("phone_number", mPhoneNumber);
+//			startActivity(intent);
+//			return true;
+//		}
+//		return false;
+//	}
+	
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == android.R.id.home) {
 			finish();
@@ -107,6 +123,7 @@ public class Messages extends FragmentActivity implements LoaderManager.LoaderCa
 		}
 		return false;
 	}
+	
 
 	@Override
 	public Loader<Cursor> onCreateLoader(int id, Bundle args) {

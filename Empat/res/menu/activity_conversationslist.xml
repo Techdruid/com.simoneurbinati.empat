@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:empat="http://schemas.android.com/apk/res-auto"
+     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/compose"
         android:icon="@drawable/compose"
-        android:showAsAction="ifRoom"
+        empat:showAsAction="ifRoom"
         android:title="@string/compose"/>
 
 </menu>

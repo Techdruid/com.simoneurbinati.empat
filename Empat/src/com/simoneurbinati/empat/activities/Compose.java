@@ -22,6 +22,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract.CommonDataKinds.Phone;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,7 +30,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Compose extends Activity {
+public class Compose extends ActionBarActivity {
 
 	private static final int REQUEST_PICK_CONTACT = 10;
 
@@ -67,8 +68,26 @@ public class Compose extends Activity {
 		return true;
 	}
 
+//	@Override
+//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+//		int id = item.getItemId();
+//		if (id == android.R.id.home) {
+//			finish();
+//			return true;
+//		}
+//		if (id == R.id.contacts) {
+//			pickRecipientFromContacts();
+//			return true;
+//		}
+//		if (id == R.id.send) {
+//			sendMessage();
+//			return true;
+//		}
+//		return false;
+//	}
+	
 	@Override
-	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 		int id = item.getItemId();
 		if (id == android.R.id.home) {
 			finish();

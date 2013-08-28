@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu xmlns:empat="http://schemas.android.com/apk/res-auto"
+     xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
         android:id="@+id/contacts"
         android:icon="@drawable/contacts"
-        android:showAsAction="ifRoom"
-        android:title="@string/contacts"/>
+        android:title="@string/contacts"
+        empat:showAsAction="ifRoom"/>
     <item
         android:id="@+id/send"
         android:icon="@drawable/send"
-        android:showAsAction="ifRoom"
-        android:title="@string/send"/>
+        android:title="@string/send"
+        empat:showAsAction="ifRoom"/>
 
 </menu>

@@ -11,13 +11,13 @@ import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.utils.Config;
 import com.simoneurbinati.empat.utils.Utility;
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,7 +28,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Login extends Activity{
+public class Login extends ActionBarActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
