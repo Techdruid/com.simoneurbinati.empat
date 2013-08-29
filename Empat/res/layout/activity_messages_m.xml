@@ -27,14 +27,11 @@
             android:layout_weight="11">
 
             <ListView
-                android:id="@+id/listview"
-				android:background="#e4e4e4"
+                android:id="@android:id/list"
+
                 android:drawSelectorOnTop="false"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:divider="@android:color/transparent"
-        		android:dividerHeight="2dp"
-        		android:padding="3dp"
                 android:footerDividersEnabled="true">
 
 
@@ -42,27 +39,29 @@
 
         </FrameLayout>
 
+
         <FrameLayout
+            android:layout_height="0dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_weight="1">
 
             <LinearLayout
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:id="@+id/linearLayout">
 
                 <EditText
                     android:id="@+id/enter_message"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:hint="@string/message_hint" />
 
                 <Button
                     android:id="@+id/send_button"
-                    android:layout_width="48dip"
-                    android:layout_height="48dip"
-                    android:background="@drawable/send_now"
+                    android:layout_width="45dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/send"
                     android:onClick="sendMessage"/>
 
             </LinearLayout>

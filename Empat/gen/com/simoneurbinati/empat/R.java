@@ -982,6 +982,7 @@ containing a value of this type.
         public static final int message_received=0x7f02005a;
         public static final int message_sent=0x7f02005b;
         public static final int send=0x7f02005c;
+        public static final int send_now=0x7f02005d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001a;
@@ -1003,16 +1004,17 @@ containing a value of this type.
         public static final int button1=0x7f050047;
         public static final int checkbox=0x7f05002b;
         public static final int collapseActionView=0x7f05000d;
-        public static final int compose=0x7f050050;
-        public static final int contacts=0x7f05004e;
+        public static final int compose=0x7f050053;
+        public static final int contacts=0x7f050051;
         public static final int default_activity_button=0x7f050026;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
-        public static final int display_name=0x7f05004a;
+        public static final int display_name=0x7f05004d;
         public static final int dropdown=0x7f05000f;
         public static final int editText1=0x7f050046;
         public static final int edit_query=0x7f050036;
         public static final int end=0x7f050013;
+        public static final int enter_message=0x7f05004b;
         public static final int expand_activities_button=0x7f050024;
         public static final int expanded_menu=0x7f05002a;
         public static final int home=0x7f050014;
@@ -1020,8 +1022,9 @@ containing a value of this type.
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
-        public static final int last_message_timestamp=0x7f05004c;
+        public static final int last_message_timestamp=0x7f05004f;
         public static final int left_icon=0x7f050031;
+        public static final int linearLayout=0x7f05004a;
         public static final int listMode=0x7f050001;
         public static final int listView1=0x7f050044;
         public static final int list_item=0x7f050027;
@@ -1047,7 +1050,8 @@ containing a value of this type.
         public static final int search_plate=0x7f05003c;
         public static final int search_src_text=0x7f05003d;
         public static final int search_voice_btn=0x7f050041;
-        public static final int send=0x7f05004f;
+        public static final int send=0x7f050052;
+        public static final int send_button=0x7f05004c;
         public static final int shortcut=0x7f05002c;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1057,11 +1061,11 @@ containing a value of this type.
         public static final int submit_area=0x7f05003f;
         public static final int tabMode=0x7f050002;
         public static final int textView2=0x7f050045;
-        public static final int timestamp=0x7f05004d;
+        public static final int timestamp=0x7f050050;
         public static final int title=0x7f050029;
         public static final int title_container=0x7f050030;
         public static final int top_action_bar=0x7f05001e;
-        public static final int unread_messages=0x7f05004b;
+        public static final int unread_messages=0x7f05004e;
         public static final int up=0x7f05001f;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1120,10 +1124,11 @@ containing a value of this type.
         public static final int activity_conversationlist=0x7f030019;
         public static final int activity_login=0x7f03001a;
         public static final int activity_messages=0x7f03001b;
-        public static final int conversationlist_element=0x7f03001c;
-        public static final int list_element_message_received=0x7f03001d;
-        public static final int list_element_message_sent=0x7f03001e;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
+        public static final int activity_messages_m=0x7f03001c;
+        public static final int conversationlist_element=0x7f03001d;
+        public static final int list_element_message_received=0x7f03001e;
+        public static final int list_element_message_sent=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030020;
     }
     public static final class menu {
         public static final int activity_compose=0x7f0c0000;
@@ -1182,6 +1187,7 @@ containing a value of this type.
         public static final int hint_message=0x7f0a001a;
         public static final int hint_phone_number=0x7f0a0019;
         public static final int insert_nick=0x7f0a0010;
+        public static final int message_hint=0x7f0a002b;
         public static final int missing_message=0x7f0a0021;
         public static final int missing_phone_number=0x7f0a0020;
         public static final int notification_text=0x7f0a0027;

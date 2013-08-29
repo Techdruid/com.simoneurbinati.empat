@@ -39,7 +39,7 @@
         <activity
             android:name="com.simoneurbinati.empat.activities.Messages"
             android:label="@string/app_name"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.simoneurbinati.empat.activities.Compose"
             android:label="@string/compose_title" />
