@@ -80,7 +80,9 @@ public class RetrieveMessagesService extends Service {
 //		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		Intent notificationIntent = new Intent(this, ConversationsList.class);
-		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+		notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
 		builder.setContentIntent(contentIntent);
 		builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));

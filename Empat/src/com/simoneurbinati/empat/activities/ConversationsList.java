@@ -56,12 +56,9 @@ public class ConversationsList extends ActionBarActivity implements LoaderManage
 		getSupportLoaderManager().initLoader(1, null, this);
 		
 		//setto la ActionBar
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		getSupportActionBar().setIcon(R.drawable.logo_bar);
 		getSupportActionBar().setDisplayShowTitleEnabled(false);
-		//getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(128, 0, 0, 0)));
 
-		//getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff2ecc03));
 
 	}
 	
