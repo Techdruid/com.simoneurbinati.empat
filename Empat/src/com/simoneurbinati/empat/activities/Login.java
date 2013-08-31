@@ -34,40 +34,40 @@ public class Login extends ActionBarActivity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_login);
 		
-		  //setto il menu a tendina
-		  	Spinner spinner = (Spinner)findViewById(R.id.spinner1);
-		  	spinner.setEnabled(false);
-		  	spinner.setClickable(false);
-		  	
-		  	ArrayList<String> ar = new ArrayList<String>();
-		  	Set<String> temp =  Utility.getCountryMap().keySet();
-		  	for(String k : temp){
-		  		ar.add(k);
-		  	}
-		  	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-        		android.R.layout.simple_spinner_item,
-        		ar
-        		);
-		  	
-	        spinner.setAdapter(adapter);
-	    	spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
-	    		@Override
-	    		public void onItemSelected(AdapterView<?> adapter, View view,int pos, long id) {
-	        		String selected = (String)adapter.getItemAtPosition(pos);
-	        		Toast.makeText(
-	        				getApplicationContext(), 
-	        				"hai selezionato "+selected, 
-	        				Toast.LENGTH_LONG
-	        			).show();
-	        	}
-
-				@Override
-				public void onNothingSelected(AdapterView<?> arg0) {
-					// TODO Auto-generated method stub
-					
-				}
-	    	});
-	    
+//		  //setto il menu a tendina
+//		  	Spinner spinner = (Spinner)findViewById(R.id.spinner1);
+//		  	spinner.setEnabled(false);
+//		  	spinner.setClickable(false);
+//		  	
+//		  	ArrayList<String> ar = new ArrayList<String>();
+//		  	Set<String> temp =  Utility.getCountryMap().keySet();
+//		  	for(String k : temp){
+//		  		ar.add(k);
+//		  	}
+//		  	ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+//        		android.R.layout.simple_spinner_item,
+//        		ar
+//        		);
+//		  	
+//	        spinner.setAdapter(adapter);
+//	    	spinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+//	    		@Override
+//	    		public void onItemSelected(AdapterView<?> adapter, View view,int pos, long id) {
+//	        		String selected = (String)adapter.getItemAtPosition(pos);
+//	        		Toast.makeText(
+//	        				getApplicationContext(), 
+//	        				"hai selezionato "+selected, 
+//	        				Toast.LENGTH_LONG
+//	        			).show();
+//	        	}
+//
+//				@Override
+//				public void onNothingSelected(AdapterView<?> arg0) {
+//					// TODO Auto-generated method stub
+//					
+//				}
+//	    	});
+//	    
 	    	//fine menu a tendina
 	    	
 	    	//bottone continua
@@ -82,6 +82,9 @@ public class Login extends ActionBarActivity{
 			});
 	    	
 	    	//fine bottone continua
+	    	//actionbar
+			getSupportActionBar().setIcon(R.drawable.logo_bar);
+			getSupportActionBar().setDisplayShowTitleEnabled(false);
 	}
 
 	private void registerRoutine() {

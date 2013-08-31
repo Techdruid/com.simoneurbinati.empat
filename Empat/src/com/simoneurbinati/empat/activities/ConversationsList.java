@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -30,6 +32,7 @@ public class ConversationsList extends ActionBarActivity implements LoaderManage
 	private ListView mListView;
 	private CursorAdapter mCursorAdapter;
 	
+	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Controllo che il telefono sia stato registrato.
@@ -49,8 +52,17 @@ public class ConversationsList extends ActionBarActivity implements LoaderManage
 				openThread(mCursorAdapter.getItemId(position));
 			}
 		});
-		//carico la lista dei threadù
+		//carico la lista dei thread
 		getSupportLoaderManager().initLoader(1, null, this);
+		
+		//setto la ActionBar
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setIcon(R.drawable.logo_bar);
+		getSupportActionBar().setDisplayShowTitleEnabled(false);
+		//getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.argb(128, 0, 0, 0)));
+
+		//getSupportActionBar().setBackgroundDrawable(new ColorDrawable(0xff2ecc03));
+
 	}
 	
 	@Override

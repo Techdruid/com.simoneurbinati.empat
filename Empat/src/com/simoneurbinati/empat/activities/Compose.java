@@ -39,16 +39,19 @@ public class Compose extends ActionBarActivity {
 
 
 	@Override
-	@TargetApi(11)
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Numero del destinatario preimpostato da intent?
 		String phoneNumber = getIntent().getStringExtra("phone_number");
-		// Usa la action bar dove disponibile.
-		if (Build.VERSION.SDK_INT >= 11) {
-			ActionBar actionBar = getActionBar();
-			actionBar.setDisplayHomeAsUpEnabled(true);
-		}
+//		// Usa la action bar dove disponibile.
+//		if (Build.VERSION.SDK_INT >= 11) {
+//			ActionBar actionBar = getActionBar();
+//			actionBar.setDisplayHomeAsUpEnabled(true);
+//		}
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getSupportActionBar().setIcon(R.drawable.logo_bar);
+		getSupportActionBar().setDisplayShowTitleEnabled(false);
+
 		// Carica il layout ed associa i valori.
 		setContentView(R.layout.activity_compose);
 		mPhoneNumber = (EditText) findViewById(R.id.phone_number);

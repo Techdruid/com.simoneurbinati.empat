@@ -1,14 +1,10 @@
 package com.simoneurbinati.empat.activities;
 
 import java.net.URL;
-
 import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.persistence.MessagesContentProvider;
 import com.simoneurbinati.empat.utils.Utility;
-
-import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.ContentValues;
@@ -17,14 +13,16 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
 import android.support.v4.content.Loader;
 import android.support.v4.widget.CursorAdapter;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -34,6 +32,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,21 +44,14 @@ import android.widget.Toast;
 public class Messages extends ActionBarActivity implements LoaderManager.LoaderCallbacks<Cursor>{
 
 	private long mThreadId;
-
 	private String mPhoneNumber;
-
 	private String mDisplayName;
-
 	private ListView mListView;
-
 	private CursorAdapter mCursorAdapter;
-	
 	private EditText sendMessage;
-	
 	private Button buttonSend;
 
 	@Override
-	@TargetApi(11)
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		// Recupera l'ID del thread da mostrare.
@@ -76,24 +68,18 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 		c.close();
 		// Risolve, se possibile, il numero dell'interlocutore in rubrica.
 		mDisplayName = Utility.resolveContactDisplayName(this, mPhoneNumber);
-		// Imposta il titolo e la action bar dove disponibile.
-		if (Build.VERSION.SDK_INT >= 11) {
-			ActionBar actionBar = getActionBar();
-			actionBar.setDisplayHomeAsUpEnabled(true);
-			if (mDisplayName != null) {
-				actionBar.setTitle(mDisplayName);
-				actionBar.setSubtitle(mPhoneNumber);
-			} else {
-				actionBar.setTitle(mPhoneNumber);
-				actionBar.setSubtitle(null);
-			}
+		// imposto la actionbar
+		ActionBar actionBar = getSupportActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
+		if (mDisplayName != null) {
+			actionBar.setTitle(mDisplayName);
+			actionBar.setSubtitle(mPhoneNumber);
 		} else {
-			if (mDisplayName != null) {
-				setTitle(mDisplayName + "( " + mPhoneNumber + ")");
-			} else {
-				setTitle(mPhoneNumber);
-			}
+			actionBar.setTitle(mPhoneNumber);
+			actionBar.setSubtitle(null);
 		}
+		
 		// Crea l'adapter per la lista..
 		mCursorAdapter = new MessagesCursorAdapter(this);
 		// Carica il layout.
@@ -102,20 +88,20 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 		mListView.setAdapter(mCursorAdapter);
 		// Carica i messaggi con un loader asincrono.
 		getSupportLoaderManager().initLoader(1, null, this);
-		
+
 		sendMessage = (EditText) findViewById(R.id.enter_message);
-		
+
 		buttonSend = (Button) findViewById(R.id.send_button);
 
 		buttonSend.setOnClickListener( new OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-            	sendMessage();
-                
-            }
-        });
-		
+			@Override
+			public void onClick(View v) {
+				sendMessage();
+
+			}
+		});
+
 		getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 	}
 
@@ -126,38 +112,33 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 		return true;
 	}
 
-//	@Override
-//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-//		int id = item.getItemId();
-//		if (id == android.R.id.home) {
-//			finish();
-//			return true;
-//		}
-//		if (id == R.id.compose) {
-//			Intent intent = new Intent(this, Compose.class);
-//			intent.putExtra("phone_number", mPhoneNumber);
-//			startActivity(intent);
-//			return true;
-//		}
-//		return false;
-//	}
-	
-//	@Override
-//	public boolean onOptionsItemSelected(MenuItem item) {
-//		int id = item.getItemId();
-//		if (id == android.R.id.home) {
-//			finish();
-//			return true;
-//		}
-//		if (id == R.id.compose) {
-//			Intent intent = new Intent(this, Compose.class);
-//			intent.putExtra("phone_number", mPhoneNumber);
-//			startActivity(intent);
-//			return true;
-//		}
-//		return false;
-//	}
-	
+	//	@Override
+	//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+	//		int id = item.getItemId();
+	//		if (id == android.R.id.home) {
+	//			finish();
+	//			return true;
+	//		}
+	//		if (id == R.id.compose) {
+	//			Intent intent = new Intent(this, Compose.class);
+	//			intent.putExtra("phone_number", mPhoneNumber);
+	//			startActivity(intent);
+	//			return true;
+	//		}
+	//		return false;
+	//	}
+
+		@Override
+		public boolean onOptionsItemSelected(MenuItem item) {
+			int id = item.getItemId();
+			if (id == android.R.id.home) {
+				finish();
+				return true;
+			}
+
+			return false;
+		}
+
 
 	@Override
 	public Loader<Cursor> onCreateLoader(int id, Bundle args) {
@@ -211,7 +192,7 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 			frame.addView(messageView);
 		}
 	}
-	
+
 	public void sendMessage() {
 		// Recupera e valida i campi del modulo.
 		String recipientPhoneNumber = mPhoneNumber.trim();
@@ -260,7 +241,7 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 				try {
 					Server.send(new URL(params[0]), params[1], params[2], params[3], params[4]);
 				} catch (Exception e) {
-					Log.e("freem", "impossibile inviare il messaggio", e);
+					Log.e("Messages", "impossibile inviare il messaggio", e);
 					error = e;
 				}
 				if (error == null) {
@@ -270,16 +251,18 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 				return error;
 			}
 
+
 			@Override
 			protected void onPostExecute(Exception error) {
-			    try {
-			        dialog.dismiss();
-			        dialog = null;
-			    } catch (Exception e) {
-			    }
+				try {
+					dialog.dismiss();
+					dialog = null;
+				} catch (Exception e) {
+				}
 				if (error == null) {
 					// Termina il composer.
-					finish();
+					//finish();
+					sendMessage.setText("");
 					// Mostra avviso.
 					Toast.makeText(Messages.this, R.string.send_toast_success, Toast.LENGTH_SHORT).show();
 				} else {

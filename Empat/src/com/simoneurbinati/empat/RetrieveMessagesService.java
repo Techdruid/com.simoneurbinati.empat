@@ -2,6 +2,7 @@ package com.simoneurbinati.empat;
 
 import java.net.URL;
 
+import com.simoneurbinati.empat.activities.ConversationsList;
 import com.simoneurbinati.empat.model.Message;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.persistence.MessagesContentProvider;
@@ -13,10 +14,12 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -76,16 +79,30 @@ public class RetrieveMessagesService extends Service {
 //		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 //		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+		Intent notificationIntent = new Intent(this, ConversationsList.class);
+		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
+		builder.setContentIntent(contentIntent);
 		builder.setLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
-		builder.setSmallIcon(R.drawable.ic_launcher);
+		builder.setSmallIcon(R.drawable.notify_icon_small);
 		builder.setContentTitle(getString(R.string.notification_title));
 		builder.setContentText(getString(R.string.notification_text));
 		builder.setWhen(System.currentTimeMillis());
 		builder.setAutoCancel(true);
 		builder.setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+		builder.setLights(Color.GREEN, 1000, 300);
 //		builder.setContentIntent(contentIntent);
+		
+//		Context context = getApplicationContext();
+//		Intent notificationIntent = new Intent(this, ConversationsList.class);
+//		PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+//		builder.setLatestEventInfo(context, "", contentText, contentIntent);
+		
+		
 		Notification notification = builder.build();
+		notification.defaults = Notification.DEFAULT_ALL;
+
+
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		notificationManager.notify(1, notification);
 	}

@@ -794,10 +794,11 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070003;
+        public static final int abc_search_url_text_holo=0x7f070004;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
+        public static final int pressed_empat_style=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -879,110 +880,142 @@ containing a value of this type.
  Minimum width of the search view text entry area. 
          */
         public static final int abc_search_view_text_min_width=0x7f08000b;
-        /**  Default screen margins, per the Android Design guidelines. 
-
+        /** 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
         public static final int activity_horizontal_margin=0x7f080010;
-        public static final int activity_vertical_margin=0x7f080011;
     }
     public static final class drawable {
-        public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
-        public static final int abc_ab_bottom_solid_light_holo=0x7f020001;
-        public static final int abc_ab_bottom_transparent_dark_holo=0x7f020002;
-        public static final int abc_ab_bottom_transparent_light_holo=0x7f020003;
-        public static final int abc_ab_share_pack_holo_dark=0x7f020004;
-        public static final int abc_ab_share_pack_holo_light=0x7f020005;
-        public static final int abc_ab_solid_dark_holo=0x7f020006;
-        public static final int abc_ab_solid_light_holo=0x7f020007;
-        public static final int abc_ab_stacked_solid_dark_holo=0x7f020008;
-        public static final int abc_ab_stacked_solid_light_holo=0x7f020009;
-        public static final int abc_ab_stacked_transparent_dark_holo=0x7f02000a;
-        public static final int abc_ab_stacked_transparent_light_holo=0x7f02000b;
-        public static final int abc_ab_transparent_dark_holo=0x7f02000c;
-        public static final int abc_ab_transparent_light_holo=0x7f02000d;
-        public static final int abc_cab_background_bottom_holo_dark=0x7f02000e;
-        public static final int abc_cab_background_bottom_holo_light=0x7f02000f;
-        public static final int abc_cab_background_top_holo_dark=0x7f020010;
-        public static final int abc_cab_background_top_holo_light=0x7f020011;
-        public static final int abc_ic_ab_back_holo_dark=0x7f020012;
-        public static final int abc_ic_ab_back_holo_light=0x7f020013;
-        public static final int abc_ic_cab_done_holo_dark=0x7f020014;
-        public static final int abc_ic_cab_done_holo_light=0x7f020015;
-        public static final int abc_ic_clear=0x7f020016;
-        public static final int abc_ic_clear_disabled=0x7f020017;
-        public static final int abc_ic_clear_holo_light=0x7f020018;
-        public static final int abc_ic_clear_normal=0x7f020019;
-        public static final int abc_ic_clear_search_api_disabled_holo_light=0x7f02001a;
-        public static final int abc_ic_clear_search_api_holo_light=0x7f02001b;
-        public static final int abc_ic_commit_search_api_holo_dark=0x7f02001c;
-        public static final int abc_ic_commit_search_api_holo_light=0x7f02001d;
-        public static final int abc_ic_go=0x7f02001e;
-        public static final int abc_ic_go_search_api_holo_light=0x7f02001f;
-        public static final int abc_ic_menu_moreoverflow_normal_holo_dark=0x7f020020;
-        public static final int abc_ic_menu_moreoverflow_normal_holo_light=0x7f020021;
-        public static final int abc_ic_menu_share_holo_dark=0x7f020022;
-        public static final int abc_ic_menu_share_holo_light=0x7f020023;
-        public static final int abc_ic_search=0x7f020024;
-        public static final int abc_ic_search_api_holo_light=0x7f020025;
-        public static final int abc_ic_voice_search=0x7f020026;
-        public static final int abc_ic_voice_search_api_holo_light=0x7f020027;
-        public static final int abc_item_background_holo_dark=0x7f020028;
-        public static final int abc_item_background_holo_light=0x7f020029;
-        public static final int abc_list_divider_holo_dark=0x7f02002a;
-        public static final int abc_list_divider_holo_light=0x7f02002b;
-        public static final int abc_list_focused_holo=0x7f02002c;
-        public static final int abc_list_longpressed_holo=0x7f02002d;
-        public static final int abc_list_pressed_holo_dark=0x7f02002e;
-        public static final int abc_list_pressed_holo_light=0x7f02002f;
-        public static final int abc_list_selector_background_transition_holo_dark=0x7f020030;
-        public static final int abc_list_selector_background_transition_holo_light=0x7f020031;
-        public static final int abc_list_selector_disabled_holo_dark=0x7f020032;
-        public static final int abc_list_selector_disabled_holo_light=0x7f020033;
-        public static final int abc_list_selector_holo_dark=0x7f020034;
-        public static final int abc_list_selector_holo_light=0x7f020035;
-        public static final int abc_menu_dropdown_panel_holo_dark=0x7f020036;
-        public static final int abc_menu_dropdown_panel_holo_light=0x7f020037;
-        public static final int abc_menu_hardkey_panel_holo_dark=0x7f020038;
-        public static final int abc_menu_hardkey_panel_holo_light=0x7f020039;
-        public static final int abc_search_dropdown_dark=0x7f02003a;
-        public static final int abc_search_dropdown_light=0x7f02003b;
-        public static final int abc_spinner_ab_default_holo_dark=0x7f02003c;
-        public static final int abc_spinner_ab_default_holo_light=0x7f02003d;
-        public static final int abc_spinner_ab_disabled_holo_dark=0x7f02003e;
-        public static final int abc_spinner_ab_disabled_holo_light=0x7f02003f;
-        public static final int abc_spinner_ab_focused_holo_dark=0x7f020040;
-        public static final int abc_spinner_ab_focused_holo_light=0x7f020041;
-        public static final int abc_spinner_ab_holo_dark=0x7f020042;
-        public static final int abc_spinner_ab_holo_light=0x7f020043;
-        public static final int abc_spinner_ab_pressed_holo_dark=0x7f020044;
-        public static final int abc_spinner_ab_pressed_holo_light=0x7f020045;
-        public static final int abc_tab_indicator_ab_holo=0x7f020046;
-        public static final int abc_tab_selected_focused_holo=0x7f020047;
-        public static final int abc_tab_selected_holo=0x7f020048;
-        public static final int abc_tab_selected_pressed_holo=0x7f020049;
-        public static final int abc_tab_unselected_pressed_holo=0x7f02004a;
-        public static final int abc_textfield_search_default_holo_dark=0x7f02004b;
-        public static final int abc_textfield_search_default_holo_light=0x7f02004c;
-        public static final int abc_textfield_search_right_default_holo_dark=0x7f02004d;
-        public static final int abc_textfield_search_right_default_holo_light=0x7f02004e;
-        public static final int abc_textfield_search_right_selected_holo_dark=0x7f02004f;
-        public static final int abc_textfield_search_right_selected_holo_light=0x7f020050;
-        public static final int abc_textfield_search_selected_holo_dark=0x7f020051;
-        public static final int abc_textfield_search_selected_holo_light=0x7f020052;
-        public static final int abc_textfield_searchview_holo_dark=0x7f020053;
-        public static final int abc_textfield_searchview_holo_light=0x7f020054;
-        public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
-        public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int compose=0x7f020057;
-        public static final int contacts=0x7f020058;
-        public static final int ic_launcher=0x7f020059;
-        public static final int message_received=0x7f02005a;
-        public static final int message_sent=0x7f02005b;
-        public static final int send=0x7f02005c;
-        public static final int send_now=0x7f02005d;
+        public static final int ab_background_textured_empat_style=0x7f020000;
+        public static final int ab_bottom_solid_empat_style=0x7f020001;
+        public static final int ab_solid_empat_style=0x7f020002;
+        public static final int ab_stacked_solid_empat_style=0x7f020003;
+        public static final int ab_texture_tile_empat_style=0x7f020004;
+        public static final int ab_transparent_empat_style=0x7f020005;
+        public static final int abc_ab_bottom_solid_dark_holo=0x7f020006;
+        public static final int abc_ab_bottom_solid_light_holo=0x7f020007;
+        public static final int abc_ab_bottom_transparent_dark_holo=0x7f020008;
+        public static final int abc_ab_bottom_transparent_light_holo=0x7f020009;
+        public static final int abc_ab_share_pack_holo_dark=0x7f02000a;
+        public static final int abc_ab_share_pack_holo_light=0x7f02000b;
+        public static final int abc_ab_solid_dark_holo=0x7f02000c;
+        public static final int abc_ab_solid_light_holo=0x7f02000d;
+        public static final int abc_ab_stacked_solid_dark_holo=0x7f02000e;
+        public static final int abc_ab_stacked_solid_light_holo=0x7f02000f;
+        public static final int abc_ab_stacked_transparent_dark_holo=0x7f020010;
+        public static final int abc_ab_stacked_transparent_light_holo=0x7f020011;
+        public static final int abc_ab_transparent_dark_holo=0x7f020012;
+        public static final int abc_ab_transparent_light_holo=0x7f020013;
+        public static final int abc_cab_background_bottom_holo_dark=0x7f020014;
+        public static final int abc_cab_background_bottom_holo_light=0x7f020015;
+        public static final int abc_cab_background_top_holo_dark=0x7f020016;
+        public static final int abc_cab_background_top_holo_light=0x7f020017;
+        public static final int abc_ic_ab_back_holo_dark=0x7f020018;
+        public static final int abc_ic_ab_back_holo_light=0x7f020019;
+        public static final int abc_ic_cab_done_holo_dark=0x7f02001a;
+        public static final int abc_ic_cab_done_holo_light=0x7f02001b;
+        public static final int abc_ic_clear=0x7f02001c;
+        public static final int abc_ic_clear_disabled=0x7f02001d;
+        public static final int abc_ic_clear_holo_light=0x7f02001e;
+        public static final int abc_ic_clear_normal=0x7f02001f;
+        public static final int abc_ic_clear_search_api_disabled_holo_light=0x7f020020;
+        public static final int abc_ic_clear_search_api_holo_light=0x7f020021;
+        public static final int abc_ic_commit_search_api_holo_dark=0x7f020022;
+        public static final int abc_ic_commit_search_api_holo_light=0x7f020023;
+        public static final int abc_ic_go=0x7f020024;
+        public static final int abc_ic_go_search_api_holo_light=0x7f020025;
+        public static final int abc_ic_menu_moreoverflow_normal_holo_dark=0x7f020026;
+        public static final int abc_ic_menu_moreoverflow_normal_holo_light=0x7f020027;
+        public static final int abc_ic_menu_share_holo_dark=0x7f020028;
+        public static final int abc_ic_menu_share_holo_light=0x7f020029;
+        public static final int abc_ic_search=0x7f02002a;
+        public static final int abc_ic_search_api_holo_light=0x7f02002b;
+        public static final int abc_ic_voice_search=0x7f02002c;
+        public static final int abc_ic_voice_search_api_holo_light=0x7f02002d;
+        public static final int abc_item_background_holo_dark=0x7f02002e;
+        public static final int abc_item_background_holo_light=0x7f02002f;
+        public static final int abc_list_divider_holo_dark=0x7f020030;
+        public static final int abc_list_divider_holo_light=0x7f020031;
+        public static final int abc_list_focused_holo=0x7f020032;
+        public static final int abc_list_longpressed_holo=0x7f020033;
+        public static final int abc_list_pressed_holo_dark=0x7f020034;
+        public static final int abc_list_pressed_holo_light=0x7f020035;
+        public static final int abc_list_selector_background_transition_holo_dark=0x7f020036;
+        public static final int abc_list_selector_background_transition_holo_light=0x7f020037;
+        public static final int abc_list_selector_disabled_holo_dark=0x7f020038;
+        public static final int abc_list_selector_disabled_holo_light=0x7f020039;
+        public static final int abc_list_selector_holo_dark=0x7f02003a;
+        public static final int abc_list_selector_holo_light=0x7f02003b;
+        public static final int abc_menu_dropdown_panel_holo_dark=0x7f02003c;
+        public static final int abc_menu_dropdown_panel_holo_light=0x7f02003d;
+        public static final int abc_menu_hardkey_panel_holo_dark=0x7f02003e;
+        public static final int abc_menu_hardkey_panel_holo_light=0x7f02003f;
+        public static final int abc_search_dropdown_dark=0x7f020040;
+        public static final int abc_search_dropdown_light=0x7f020041;
+        public static final int abc_spinner_ab_default_holo_dark=0x7f020042;
+        public static final int abc_spinner_ab_default_holo_light=0x7f020043;
+        public static final int abc_spinner_ab_disabled_holo_dark=0x7f020044;
+        public static final int abc_spinner_ab_disabled_holo_light=0x7f020045;
+        public static final int abc_spinner_ab_focused_holo_dark=0x7f020046;
+        public static final int abc_spinner_ab_focused_holo_light=0x7f020047;
+        public static final int abc_spinner_ab_holo_dark=0x7f020048;
+        public static final int abc_spinner_ab_holo_light=0x7f020049;
+        public static final int abc_spinner_ab_pressed_holo_dark=0x7f02004a;
+        public static final int abc_spinner_ab_pressed_holo_light=0x7f02004b;
+        public static final int abc_tab_indicator_ab_holo=0x7f02004c;
+        public static final int abc_tab_selected_focused_holo=0x7f02004d;
+        public static final int abc_tab_selected_holo=0x7f02004e;
+        public static final int abc_tab_selected_pressed_holo=0x7f02004f;
+        public static final int abc_tab_unselected_pressed_holo=0x7f020050;
+        public static final int abc_textfield_search_default_holo_dark=0x7f020051;
+        public static final int abc_textfield_search_default_holo_light=0x7f020052;
+        public static final int abc_textfield_search_right_default_holo_dark=0x7f020053;
+        public static final int abc_textfield_search_right_default_holo_light=0x7f020054;
+        public static final int abc_textfield_search_right_selected_holo_dark=0x7f020055;
+        public static final int abc_textfield_search_right_selected_holo_light=0x7f020056;
+        public static final int abc_textfield_search_selected_holo_dark=0x7f020057;
+        public static final int abc_textfield_search_selected_holo_light=0x7f020058;
+        public static final int abc_textfield_searchview_holo_dark=0x7f020059;
+        public static final int abc_textfield_searchview_holo_light=0x7f02005a;
+        public static final int abc_textfield_searchview_right_holo_dark=0x7f02005b;
+        public static final int abc_textfield_searchview_right_holo_light=0x7f02005c;
+        public static final int btn_cab_done_default_empat_style=0x7f02005d;
+        public static final int btn_cab_done_empat_style=0x7f02005e;
+        public static final int btn_cab_done_focused_empat_style=0x7f02005f;
+        public static final int btn_cab_done_pressed_empat_style=0x7f020060;
+        public static final int cab_background_bottom_empat_style=0x7f020061;
+        public static final int cab_background_top_empat_style=0x7f020062;
+        public static final int compose=0x7f020063;
+        public static final int contacts=0x7f020064;
+        public static final int ic_launcher=0x7f020065;
+        public static final int list_focused_empat_style=0x7f020066;
+        public static final int logo_bar=0x7f020067;
+        public static final int menu_dropdown_panel_empat_style=0x7f020068;
+        public static final int message_received=0x7f020069;
+        public static final int message_sent=0x7f02006a;
+        public static final int notify_icon_small=0x7f02006b;
+        public static final int pressed_background_empat_style=0x7f02006c;
+        public static final int progress_bg_empat_style=0x7f02006d;
+        public static final int progress_horizontal_empat_style=0x7f02006e;
+        public static final int progress_primary_empat_style=0x7f02006f;
+        public static final int progress_secondary_empat_style=0x7f020070;
+        public static final int selectable_background_empat_style=0x7f020071;
+        public static final int send=0x7f020072;
+        public static final int send_now=0x7f020073;
+        public static final int spinner_ab_default_empat_style=0x7f020074;
+        public static final int spinner_ab_disabled_empat_style=0x7f020075;
+        public static final int spinner_ab_focused_empat_style=0x7f020076;
+        public static final int spinner_ab_pressed_empat_style=0x7f020077;
+        public static final int spinner_background_ab_empat_style=0x7f020078;
+        public static final int tab_indicator_ab_empat_style=0x7f020079;
+        public static final int tab_selected_empat_style=0x7f02007a;
+        public static final int tab_selected_focused_empat_style=0x7f02007b;
+        public static final int tab_selected_pressed_empat_style=0x7f02007c;
+        public static final int tab_unselected_empat_style=0x7f02007d;
+        public static final int tab_unselected_focused_empat_style=0x7f02007e;
+        public static final int tab_unselected_pressed_empat_style=0x7f02007f;
     }
     public static final class id {
         public static final int action_bar=0x7f05001a;
@@ -1004,17 +1037,17 @@ containing a value of this type.
         public static final int button1=0x7f050047;
         public static final int checkbox=0x7f05002b;
         public static final int collapseActionView=0x7f05000d;
-        public static final int compose=0x7f050053;
-        public static final int contacts=0x7f050051;
+        public static final int compose=0x7f050052;
+        public static final int contacts=0x7f050050;
         public static final int default_activity_button=0x7f050026;
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
-        public static final int display_name=0x7f05004d;
+        public static final int display_name=0x7f05004c;
         public static final int dropdown=0x7f05000f;
         public static final int editText1=0x7f050046;
         public static final int edit_query=0x7f050036;
         public static final int end=0x7f050013;
-        public static final int enter_message=0x7f05004b;
+        public static final int enter_message=0x7f05004a;
         public static final int expand_activities_button=0x7f050024;
         public static final int expanded_menu=0x7f05002a;
         public static final int home=0x7f050014;
@@ -1022,13 +1055,13 @@ containing a value of this type.
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000a;
         public static final int image=0x7f050025;
-        public static final int last_message_timestamp=0x7f05004f;
+        public static final int last_message_timestamp=0x7f05004e;
         public static final int left_icon=0x7f050031;
-        public static final int linearLayout=0x7f05004a;
+        public static final int linearLayout=0x7f050049;
         public static final int listMode=0x7f050001;
         public static final int listView1=0x7f050044;
         public static final int list_item=0x7f050027;
-        public static final int listview=0x7f050049;
+        public static final int listview=0x7f050048;
         public static final int message=0x7f050043;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
@@ -1050,22 +1083,21 @@ containing a value of this type.
         public static final int search_plate=0x7f05003c;
         public static final int search_src_text=0x7f05003d;
         public static final int search_voice_btn=0x7f050041;
-        public static final int send=0x7f050052;
-        public static final int send_button=0x7f05004c;
+        public static final int send=0x7f050051;
+        public static final int send_button=0x7f05004b;
         public static final int shortcut=0x7f05002c;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
-        public static final int spinner1=0x7f050048;
         public static final int split_action_bar=0x7f05001c;
         public static final int submit_area=0x7f05003f;
         public static final int tabMode=0x7f050002;
         public static final int textView2=0x7f050045;
-        public static final int timestamp=0x7f050050;
+        public static final int timestamp=0x7f05004f;
         public static final int title=0x7f050029;
         public static final int title_container=0x7f050030;
         public static final int top_action_bar=0x7f05001e;
-        public static final int unread_messages=0x7f05004e;
+        public static final int unread_messages=0x7f05004d;
         public static final int up=0x7f05001f;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1124,11 +1156,10 @@ containing a value of this type.
         public static final int activity_conversationlist=0x7f030019;
         public static final int activity_login=0x7f03001a;
         public static final int activity_messages=0x7f03001b;
-        public static final int activity_messages_m=0x7f03001c;
-        public static final int conversationlist_element=0x7f03001d;
-        public static final int list_element_message_received=0x7f03001e;
-        public static final int list_element_message_sent=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int conversationlist_element=0x7f03001c;
+        public static final int list_element_message_received=0x7f03001d;
+        public static final int list_element_message_sent=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
     }
     public static final class menu {
         public static final int activity_compose=0x7f0c0000;
@@ -1178,28 +1209,28 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_settings=0x7f0a000e;
         public static final int app_name=0x7f0a000d;
-        public static final int compose=0x7f0a001c;
-        public static final int compose_title=0x7f0a001d;
-        public static final int contacts=0x7f0a001e;
+        public static final int compose=0x7f0a001d;
+        public static final int compose_title=0x7f0a001e;
+        public static final int contacts=0x7f0a001f;
         public static final int continue_button=0x7f0a0013;
-        public static final int defaultprefix=0x7f0a002a;
+        public static final int defaultprefix=0x7f0a002b;
         public static final int hello_world=0x7f0a000f;
-        public static final int hint_message=0x7f0a001a;
+        public static final int hint_message=0x7f0a001b;
         public static final int hint_phone_number=0x7f0a0019;
         public static final int insert_nick=0x7f0a0010;
-        public static final int message_hint=0x7f0a002b;
-        public static final int missing_message=0x7f0a0021;
-        public static final int missing_phone_number=0x7f0a0020;
-        public static final int notification_text=0x7f0a0027;
-        public static final int notification_title=0x7f0a0026;
-        public static final int read=0x7f0a001b;
-        public static final int registration_dialog_message=0x7f0a0029;
-        public static final int registration_dialog_title=0x7f0a0028;
-        public static final int send=0x7f0a001f;
-        public static final int send_dialog_message=0x7f0a0023;
-        public static final int send_dialog_title=0x7f0a0022;
-        public static final int send_toast_error=0x7f0a0025;
-        public static final int send_toast_success=0x7f0a0024;
+        public static final int message_hint=0x7f0a001a;
+        public static final int missing_message=0x7f0a0022;
+        public static final int missing_phone_number=0x7f0a0021;
+        public static final int notification_text=0x7f0a0028;
+        public static final int notification_title=0x7f0a0027;
+        public static final int read=0x7f0a001c;
+        public static final int registration_dialog_message=0x7f0a002a;
+        public static final int registration_dialog_title=0x7f0a0029;
+        public static final int send=0x7f0a0020;
+        public static final int send_dialog_message=0x7f0a0024;
+        public static final int send_dialog_title=0x7f0a0023;
+        public static final int send_toast_error=0x7f0a0026;
+        public static final int send_toast_success=0x7f0a0025;
         public static final int send_toast_unknown_recipient=0x7f0a0018;
         public static final int telephone_hint=0x7f0a0012;
         public static final int toast_empty_phone_string=0x7f0a0015;
@@ -1209,35 +1240,21 @@ containing a value of this type.
         public static final int welcome_message=0x7f0a0011;
     }
     public static final class style {
+        public static final int ActionBar_Solid_Empat_style=0x7f0b0081;
+        public static final int ActionBar_Transparent_Empat_style=0x7f0b0082;
+        public static final int ActionBarTabStyle_Empat_style=0x7f0b0085;
+        public static final int ActionButton_CloseMode_Empat_style=0x7f0b0088;
         /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-
         Base application theme for API 11+. This theme completely replaces
         AppBaseTheme from res/values/styles.xml on API 11+ devices.
     
  API 11 theme customizations can go here. 
-
-        Base application theme for API 14+. This theme completely replaces
-        AppBaseTheme from BOTH res/values/styles.xml and
-        res/values-v11/styles.xml on API 14+ devices.
-    
- API 14 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f0b007f;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f0b0080;
-        /**  Theme no tile 
-         */
-        public static final int AppThemeNoTitle=0x7f0b0081;
+        public static final int DropDownListView_Empat_style=0x7f0b0084;
+        public static final int DropDownNav_Empat_style=0x7f0b0086;
+        public static final int PopupMenu_Empat_style=0x7f0b0083;
+        public static final int ProgressBar_Empat_style=0x7f0b0087;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0061;
@@ -1331,6 +1348,11 @@ containing a value of this type.
         /**  Base platform-dependent theme providing a light-themed activity. 
          */
         public static final int Theme_Base_Light=0x7f0b0079;
+        public static final int Theme_Empat_style=0x7f0b0080;
+        /**  this style is only referenced in a Light.DarkActionBar based theme 
+ this style is only referenced in a Light.DarkActionBar based theme 
+         */
+        public static final int Theme_Empat_style_Widget=0x7f0b0089;
         /**  Styles in here can be extended for customisation in your application. Each utilises
          one of the Base styles. If Holo themes are available on the current platform version
          they will be used instead of the compat styles. 
