@@ -9,6 +9,7 @@ import com.simoneurbinati.empat.utils.Config;
 
 public class GCMIntentService extends GCMBaseIntentService {
 
+	
 	public GCMIntentService() {
 		super(Config.GCM_SENDER_ID);
 	}
