@@ -37,6 +37,7 @@ public class Compose extends ActionBarActivity {
 	private EditText mPhoneNumber;
 	private EditText mMessage;
 
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
