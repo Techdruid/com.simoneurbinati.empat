@@ -107,6 +107,7 @@ public class RetrieveMessagesService extends Service {
 
 		NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 		notificationManager.notify(1, notification);
+
 	}
 
 	private void saveMessage(Message message) {

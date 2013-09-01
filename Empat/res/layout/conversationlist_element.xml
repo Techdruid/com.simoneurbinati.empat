@@ -28,7 +28,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_weight="0"
-            android:background="#ff0000"
+            android:background="#25a601"
             android:gravity="center"
             android:textColor="#ffffff"
             android:textIsSelectable="false"

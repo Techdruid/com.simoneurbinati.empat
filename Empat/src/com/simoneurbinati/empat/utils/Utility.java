@@ -1,5 +1,6 @@
 package com.simoneurbinati.empat.utils;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
 import android.provider.ContactsContract.PhoneLookup;
 import android.telephony.TelephonyManager;
@@ -248,6 +250,24 @@ public class Utility {
 		}
 	}
 
+	public static String resolveContactPhoto(Context context, String phoneNumber) {
+		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
+		Cursor c = context.getContentResolver().query( uri, new String[] { PhoneLookup.LOOKUP_KEY }, null, null, null );
+
+		if ( c != null && c.getCount() > 0 ) {
+
+		        c.moveToFirst();
+
+		        Uri lookupUri = Uri.withAppendedPath( ContactsContract.Contacts.CONTENT_LOOKUP_URI, c.getString( 0 ) );
+		        Uri res = ContactsContract.Contacts.lookupContact( context.getContentResolver(), lookupUri );
+
+		        InputStream is = ContactsContract.Contacts.openContactPhotoInputStream( context.getContentResolver(), res );
+		        
+		}
+		return "";
+	}
+
+	
 	public static String resolveContactDisplayName(Context context, String phoneNumber) {
 		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
 		Cursor c = context.getContentResolver().query(uri, new String[] { Contacts.DISPLAY_NAME }, null, null, null);
@@ -258,6 +278,7 @@ public class Utility {
 			displayName = null;
 		}
 		c.close();
+		
 		return displayName;
 	}
 
