@@ -1,5 +1,6 @@
 package com.simoneurbinati.empat.activities;
 
+
 import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.persistence.MessagesContentProvider;
 import com.simoneurbinati.empat.utils.Utility;
@@ -7,8 +8,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.CursorLoader;
@@ -69,14 +68,6 @@ public class ConversationsList extends ActionBarActivity implements LoaderManage
 		return true;
 	}
 
-//	@Override
-//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-//		if (item.getItemId() == R.id.compose) {
-//			startActivity(new Intent(this, Compose.class));
-//			return true;
-//		}
-//		return false;
-//	}
 	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
@@ -125,8 +116,22 @@ public class ConversationsList extends ActionBarActivity implements LoaderManage
 
 		@Override
 		public void bindView(View view, Context context, Cursor cursor) {
-			String phoneNumber = cursor.getString(1);
+			final String phoneNumber = cursor.getString(1);
 			String displayName = Utility.resolveContactDisplayName(context, phoneNumber);
+			
+			//immagine contatto
+//			final ImageView profile  = (ImageView)view.findViewById(R.id.picture);
+//			//profile.setImageBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.notify_icon_small));
+//			
+//			
+//			Bitmap img = Utility.resolveContactPhoto(context, phoneNumber);			
+//			//String url = Utility.resolveContactPhotoUrl(context, phoneNumber);
+//			if(img != null){
+//				//aq.id(R.id.picture).getCachedImage(url);
+//				//aq.id(R.id.picture).
+//				profile.setImageBitmap(img);
+//			}
+			
 			long lastUpdate = cursor.getLong(2);
 			int unreadMessages = cursor.getInt(3);
 			TextView tvDisplayName = (TextView) view.findViewById(R.id.display_name);

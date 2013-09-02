@@ -1,12 +1,14 @@
 package com.simoneurbinati.empat.utils;
 
+import java.io.BufferedInputStream;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
@@ -14,11 +16,11 @@ import android.provider.ContactsContract.PhoneLookup;
 import android.telephony.TelephonyManager;
 
 public class Utility {
-	
+
 	public static Map<String, String> getCountryMap(){
 		return map;
 	}
-	
+
 	private static final Map<String, String> map = new HashMap<String, String>();
 
 	static {
@@ -250,24 +252,48 @@ public class Utility {
 		}
 	}
 
-	public static String resolveContactPhoto(Context context, String phoneNumber) {
+	public static Bitmap resolveContactPhoto(Context context, String phoneNumber) {
 		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
 		Cursor c = context.getContentResolver().query( uri, new String[] { PhoneLookup.LOOKUP_KEY }, null, null, null );
+		Bitmap my_btmp = null;
 
 		if ( c != null && c.getCount() > 0 ) {
 
-		        c.moveToFirst();
+			c.moveToFirst();
 
-		        Uri lookupUri = Uri.withAppendedPath( ContactsContract.Contacts.CONTENT_LOOKUP_URI, c.getString( 0 ) );
-		        Uri res = ContactsContract.Contacts.lookupContact( context.getContentResolver(), lookupUri );
+			Uri lookupUri = Uri.withAppendedPath( ContactsContract.Contacts.CONTENT_LOOKUP_URI, c.getString( 0 ) );
+			Uri res = ContactsContract.Contacts.lookupContact( context.getContentResolver(), lookupUri );
 
-		        InputStream is = ContactsContract.Contacts.openContactPhotoInputStream( context.getContentResolver(), res );
-		        
+			InputStream is = ContactsContract.Contacts.openContactPhotoInputStream( context.getContentResolver(), res );
+			BufferedInputStream buf =new BufferedInputStream(is);
+			my_btmp = BitmapFactory.decodeStream(buf);
 		}
-		return "";
+		//		else{
+		//			my_btmp = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
+		//		}
+		return my_btmp;
 	}
 
-	
+	public static String resolveContactPhotoUrl(Context context, String phoneNumber) {
+		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
+		Cursor c = context.getContentResolver().query( uri, new String[] { PhoneLookup.LOOKUP_KEY }, null, null, null );
+		//Bitmap my_btmp = null;
+		String url = "";
+
+		if ( c != null && c.getCount() > 0 ) {
+
+			c.moveToFirst();
+
+			Uri lookupUri = Uri.withAppendedPath( ContactsContract.Contacts.CONTENT_LOOKUP_URI, c.getString( 0 ) );
+			Uri res = ContactsContract.Contacts.lookupContact( context.getContentResolver(), lookupUri );
+			url = res.toString();
+
+		}
+
+		return url;
+	}
+
+
 	public static String resolveContactDisplayName(Context context, String phoneNumber) {
 		Uri uri = Uri.withAppendedPath(PhoneLookup.CONTENT_FILTER_URI, Uri.encode(phoneNumber));
 		Cursor c = context.getContentResolver().query(uri, new String[] { Contacts.DISPLAY_NAME }, null, null, null);
@@ -278,7 +304,7 @@ public class Utility {
 			displayName = null;
 		}
 		c.close();
-		
+
 		return displayName;
 	}
 

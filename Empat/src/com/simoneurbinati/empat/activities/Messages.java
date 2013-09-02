@@ -13,8 +13,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -32,7 +30,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -54,7 +51,7 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		// Recupera l'ID del thread da mostrare.
+		// ID del thread da mostrare.
 		Intent intent = getIntent();
 		mThreadId = intent.getLongExtra("thread_id", 0);
 		// Carica il thread dal database.
@@ -112,22 +109,6 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 		return true;
 	}
 
-	//	@Override
-	//	public boolean onMenuItemSelected(int featureId, MenuItem item) {
-	//		int id = item.getItemId();
-	//		if (id == android.R.id.home) {
-	//			finish();
-	//			return true;
-	//		}
-	//		if (id == R.id.compose) {
-	//			Intent intent = new Intent(this, Compose.class);
-	//			intent.putExtra("phone_number", mPhoneNumber);
-	//			startActivity(intent);
-	//			return true;
-	//		}
-	//		return false;
-	//	}
-
 		@Override
 		public boolean onOptionsItemSelected(MenuItem item) {
 			int id = item.getItemId();
@@ -148,7 +129,7 @@ public class Messages extends ActionBarActivity implements LoaderManager.LoaderC
 	@Override
 	public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 		mCursorAdapter.swapCursor(cursor);
-		// Esegue una update che imposta a zero i messaggi non letti per il thread.
+		//  imposta a zero i messaggi non letti per il thread.
 		ContentValues values = new ContentValues();
 		values.put("unread", 0);
 		getContentResolver().update(MessagesContentProvider.THREADS_URI, values, "_id = ?", new String[] { String.valueOf(mThreadId) });

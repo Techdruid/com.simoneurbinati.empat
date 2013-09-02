@@ -6,9 +6,7 @@ import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.persistence.MessagesContentProvider;
 import com.simoneurbinati.empat.utils.Utility;
-
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;

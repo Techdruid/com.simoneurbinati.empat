@@ -3,14 +3,11 @@ package com.simoneurbinati.empat.activities;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Set;
 import java.util.regex.Pattern;
 import com.google.android.gcm.GCMRegistrar;
 import com.simoneurbinati.empat.R;
 import com.simoneurbinati.empat.net.Server;
 import com.simoneurbinati.empat.utils.Config;
-import com.simoneurbinati.empat.utils.Utility;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,12 +17,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 public class Login extends ActionBarActivity{
